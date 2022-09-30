@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Mobile Acquiring Range Transaction Application">
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+
+
+    <title>TAX Department</title>
+
+    <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/static/css/core.css}" rel="stylesheet" type="text/css"/>
+      <link th:href="@{/static/css/components.css}" rel="stylesheet" type="text/css"/>
+      <link th:href="@{/static/css/icons.css}" rel="stylesheet" type="text/css"/>
+    <link href="static/css/pages.css" rel="stylesheet" type="text/css"/>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+
+<div class="account-pages"></div>
+<div class="clearfix"></div>
+<div class="wrapper-page" style="margin: 5% auto; position: relative; width: 420px;">
+    <div class=" card-box" style="border: 1px solid rgba(54, 64, 74, 0.1);">
+        <div class="panel-heading">
+            <div class="text-center">
+                <a href="https://soliq.uz/" class="logo">
+                    <span class="m-l-10" style="color: #7e57c2;">TAX DEPARTMENT</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div th:if="${param.error}" class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <span>Wrong user name or password</span>
+            </div>
+            <form class="form-horizontal m-t-20" th:action="@{/login}+'?'+${_csrf.parameterName}+'='+${_csrf.token}"
+                  method="post">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <input name="phoneNumber" class="form-control" type="text" required="" placeholder="Phone number"/>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <input name="password" class="form-control" type="password" required=""
+                               placeholder="Password"/>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <div class="checkbox checkbox-custom">
+                            <input type="checkbox" name="remember-me" id="rememberMe"/>
+                            <label for="rememberMe">Remember me</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <button class="btn btn-default btn-block text-uppercase waves-effect waves-light"
+                                type="submit" style="background-color: #7e57c2; color: white">Login</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 m-t-5">
+                    <a href="#" class="m-l-5">
+                        <small><i class="fa fa-lock m-r-5"></i>Forgot password?</small>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var resizefunc = [];
+</script>
+
+<!-- jQuery  -->
+<script th:src="@{/static/js/jquery.min.js}"></script>
+<script th:src="@{/static/js/jquery.app.js}"></script>
+<script th:src="@{/static/js/bootstrap.min.js}"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+    // $(document).ready(function () {
+    //
+    //     $('.form-control-feedback').click(function () {
+    //         var pwd = $(this).prev('input');
+    //         if (pwd.attr('type') == 'password') {
+    //             pwd.attr('type', 'text');
+    //             $(this).removeClass('md-visibility').addClass('md-visibility-off')
+    //         } else {
+    //             pwd.attr('type', 'password');
+    //             $(this).removeClass('md-visibility-off').addClass('md-visibility')
+    //         }
+    //
+    //     });
+    // });
+    /*]]>*/
+</script>
+</body>
+</html>

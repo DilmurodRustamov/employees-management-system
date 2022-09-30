@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TAX Department</title>
+    <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/static/css/core.css}" rel="stylesheet" type="text/css"/>
+
+
+
+</head>
+<body>
+
+<div class="topbar">
+
+    <!-- LOGO -->
+    <div class="topbar-left">
+        <div class="text-center">
+            <a href="dashboard.html" class="logo"><i class="icon-magnet icon-c-logo"></i><span>TAX</span></a>
+        </div>
+    </div>
+
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="">
+                <div class="pull-left">
+                    <button class="button-menu-mobile open-left waves-effect waves-light">
+                        <i class="md md-menu"></i>
+                    </button>
+                    <span class="clearfix"></span>
+                </div>
+
+                <ul class="nav navbar-nav hidden-xs">
+                    <li>
+                        <a href="javascript:void(0);">
+                            <span class="font-14">[[${#authentication.principal.userRole}]]</span>
+                        </a>
+                    </li>
+                </ul>
+                <form role="search" class="navbar-left app-search pull-left hidden-xs">
+                    <input type="text" placeholder="Search..." class="form-control">
+                    <a href=""><i class="fa fa-search"></i></a>
+                </form>
+
+
+                <ul class="nav navbar-nav navbar-right pull-right">
+                    <li class="dropdown top-menu-item-xs">
+                        <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown"
+                           aria-expanded="true">User</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:void(0)"><i class="ti-user m-r-10 text-custom"></i> Profile</a>
+                            </li>
+                            <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a>
+                            </li>
+                            <li><a href="javascript:void(0)"><i class="ti-lock m-r-10 text-custom"></i> Lock screen</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="/logout"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+    <div class="content-page" style=" margin:0 auto;overflow: hidden;">
+        <div class="content">
+            <div class="container">
+                <div class="col-sm-12">
+                    <div th:if="${param.error}" class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <span th:text="#{login_failed}"/>
+                    </div>
+                    <form th:object="${user}" class="card-box" id="form" th:action="@{/employees(id=${user.id})}"
+                          method="post">
+
+                    <div class="row">
+                        <!--        </form>-->
+                        <div class="col-sm-3 col-md-3">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control input-lg" placeholder="Enter name" required
+                                       th:field="*{name}" type="text"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input class="form-control input-lg" placeholder="example@mail.com" required id="email"
+                                       th:field="*{email}" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                       title="example: example@mail.com">
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3">
+                            <div class="form-group">
+                                <label>User Role</label>
+                                <select class="form-control input-lg" required="" th:field="*{userRole}" id="merchantType">
+                                    <option th:selected="true" value="" placeholder="Select Role"></option>
+                                    <option th:each="userRole : ${T(uz.tax.employeemanagement2.ref.UserRole).values()}"
+                                            th:value="${userRole}">
+                                        [[${userRole}]]
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3">
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input class="form-control input-lg" placeholder="Enter password" required
+                                       th:field="*{password}" type="password"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <!--        </form>-->
+                        <div class="col-sm-3 col-md-3">
+                            <div class="form-group">
+                                <label>Phone number</label>
+                                <input class="form-control input-lg" placeholder="Enter phone number" required
+                                       th:field="*{phoneNumber}" type="text"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3">
+                            <div class="form-group">
+                                <label>Position</label>
+                                <input class="form-control input-lg" placeholder="Enter position" required
+                                       th:field="*{position}" type="text"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-md-3">
+                            <div class="form-group">
+                                <label>Salary</label>
+                                <input class="form-control input-lg" placeholder="Enter salary" required
+                                       th:field="*{salary}" type="text"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="pull-right m-t-15">
+                                <a href="javascript:history.back()" class="btn btn-inverse">Back</a>
+                                <span >
+                                    <button class="btn btn-success m-l-10" id="sendButton" type="submit">Save</button>
+                                    <!--                                <button></button>-->
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/static/js/bootstrap.min.js}"></script>
+    <script defer th:inline="javascript" type="text/javascript">
+        /*<![CDATA[*/
+
+        $(function ($) {
+
+        // $(document).ready(function () {
+
+
+            $('#sendButton').click(function () {
+                var form = $('#form');
+                form.submit(function (e) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: $(this).attr("action"),
+                        type: 'POST',
+                        data: new FormData($(this)[0]),
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                            window.location.href = "/employees";
+                        }
+                });
+            });
+        });
+
+        // });
+        });
+        /*]]>*/
+    </script>
+
+</body>
+</html>
