@@ -13,10 +13,9 @@
 
 <div class="topbar">
 
-    <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="dashboard.html" class="logo"><i class="icon-magnet icon-c-logo"></i><span>TAX</span></a>
+            <a href="/employees" class="logo"><i class="icon-magnet icon-c-logo"></i><span>TAX</span></a>
         </div>
     </div>
 
@@ -61,7 +60,7 @@
                     </li>
                 </ul>
             </div>
-            <!--/.nav-collapse -->
+
         </div>
     </div>
 </div>
@@ -78,7 +77,7 @@
                           method="post">
 
                     <div class="row">
-                        <!--        </form>-->
+
                         <div class="col-sm-3 col-md-3">
                             <div class="form-group">
                                 <label>Name</label>
@@ -116,7 +115,7 @@
                     </div>
                     <div class="row">
 
-                        <!--        </form>-->
+
                         <div class="col-sm-3 col-md-3">
                             <div class="form-group">
                                 <label>Phone number</label>
@@ -127,15 +126,15 @@
                         <div class="col-sm-3 col-md-3">
                             <div class="form-group">
                                 <label>Position</label>
-                                <input class="form-control input-lg" placeholder="Enter position" required
+                                <input class="form-control input-lg" placeholder="Enter position"
                                        th:field="*{position}" type="text"/>
                             </div>
                         </div>
                         <div class="col-sm-3 col-md-3">
                             <div class="form-group">
                                 <label>Salary</label>
-                                <input class="form-control input-lg" placeholder="Enter salary" required
-                                       th:field="*{salary}" type="text"/>
+                                <input class="form-control input-lg" placeholder="Enter salary"
+                                       th:field="*{salary}" type="number"/>
                             </div>
                         </div>
                     </div>

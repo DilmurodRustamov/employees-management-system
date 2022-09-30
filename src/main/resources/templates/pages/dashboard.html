@@ -8,7 +8,6 @@
 
     <title>TAX Department</title>
 
-
     <link th:href="@{/static/css/components.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/static/css/icons.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/static/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
@@ -18,8 +17,6 @@
     <link th:href="@{/static/plugins/datatables/dataTables.bootstrap.min.css}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" th:href="@{http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css}">
     <link th:href="@{/static/css/core.css}" rel="stylesheet" type="text/css"/>
-    <!--        <link href="assets/css/pages.css" rel="stylesheet" type="text/css" />-->
-    <!--        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />-->
     <style>
         .table-action-btn {
             display: inline-block;
@@ -31,14 +28,10 @@
         }
 
     </style>
-    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
 
-    <!--        <script src="assets/js/modernizr.min.js"></script>-->
 
 </head>
 
@@ -50,7 +43,7 @@
 
         <div class="topbar-left">
             <div class="text-center">
-                <a href="dashboard.html" class="logo"><i class="icon-magnet icon-c-logo"></i><span>TAX</span></a>
+                <a href="/employees" class="logo"><i class="icon-magnet icon-c-logo"></i><span>TAX</span></a>
             </div>
         </div>
 
@@ -101,22 +94,17 @@
 
     <div class="left side-menu">
         <div class="sidebar-inner slimscrollleft">
-            <!--- Divider -->
             <div id="sidebar-menu">
                 <ul>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-home"></i>
-                            <span> Dashboard </span> <span class="menu-arrow"></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="index.html">Dashboard 1</a></li>
-                            <li><a href="dashboard.html">Dashboard 2</a></li>
-                            <li><a href="dashboard_3.html">Dashboard 3</a></li>
-                            <li><a href="dashboard_4.html">Dashboard 4</a></li>
-                        </ul>
+                    <li>
+                        <a class="waves-effect" href="/api/currency">
+                            <i class="fa fa-money"></i>
+                            <span> Exchange rate </span>
+                        </a>
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-paint-bucket"></i>
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-pencil-square-o"></i>
                             <span> About committee </span> <span class="menu-arrow"></span> </a>
                         <ul class="list-unstyled">
                             <li><a href="#">About committee</a></li>
@@ -128,7 +116,7 @@
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-light-bulb"></i><span
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-pencil-square-o"></i><span
                                 class="label label-primary pull-right">10</span><span> Activity </span> </a>
                         <ul class="list-unstyled">
                             <li><a href="#">Activity</a></li>
@@ -142,7 +130,7 @@
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-spray"></i> <span> Regulatory docs </span>
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-pencil-square-o"></i> <span> Regulatory docs </span>
                             <span class="menu-arrow"></span> </a>
                         <ul class="list-unstyled">
                             <li><a href="#">Regulatory docs</a></li>
@@ -156,7 +144,7 @@
 
                     <li class="has_sub">
                         <a href="javascript:void(0);" class="waves-effect"><i
-                                class="ti-pencil-alt"></i><span> Taxation </span> <span class="menu-arrow"></span></a>
+                                class="fa fa-pencil-square-o"></i><span> Taxation </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                             <li><a href="#">Taxation</a></li>
                             <li><a href="#">Taxation</a></li>
@@ -168,8 +156,8 @@
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i
-                                class="ti-menu-alt"></i><span>Press service </span> <span class="menu-arrow"></span></a>
+                        <a href="javascript:void(0);" class="waves-effect" ><i
+                                class="fa fa-pencil-square-o"></i><span>Press service </span> <span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                             <li><a href="#">Press service</a></li>
                             <li><a href="#">Press service</a></li>
@@ -181,7 +169,7 @@
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-bar-chart"></i><span
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-pencil-square-o"></i><span
                                 class="label label-pink pull-right">11</span><span> Services </span></a>
                         <ul class="list-unstyled">
                             <li><a href="#">Services</a></li>
@@ -194,7 +182,7 @@
                     </li>
 
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-bar-chart"></i><span
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-pencil-square-o"></i><span
                                 class="label label-pink pull-right">11</span><span> Open data </span></a>
                         <ul class="list-unstyled">
                             <li><a href="#">Open data</a></li>
@@ -214,7 +202,6 @@
     </div>
 
     <div class="content-page">
-        <!-- Start content -->
         <div class="content">
             <div class="container">
 
@@ -247,14 +234,12 @@
                                     <th>#</th>
                                     <th>name</th>
                                     <th>phoneNumber</th>
-                                    <!--                        <th>[[#{bank}]]</th>-->
                                     <th>userRole</th>
                                     <th>email</th>
                                     <th>position</th>
                                     <th>salary</th>
                                     <th>createdAt</th>
                                     <th>state</th>
-                                    <!--                        <th>[[#{status}]]</th>-->
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -264,9 +249,9 @@
                 </div>
 
 
-            </div> <!-- container -->
+            </div>
 
-        </div> <!-- content -->
+        </div>
 
         <footer class="footer text-right">
             State Tax Committee Call us: <a dir="ltr" href="tel:+' + 71 202-32-82 + '">71 202-32-82</a>,<a dir="ltr"
@@ -276,149 +261,14 @@
 
     </div>
 
-
-    <div class="side-bar right-bar nicescroll">
-        <h4 class="text-center">Chat</h4>
-        <div class="contact-list nicescroll">
-            <ul class="list-group contacts-list">
-                <li class="list-group-item">
-                    <a href="#">
-                        <div class="avatar">
-                            <img src="assets/images/users/avatar-1.jpg" alt="">
-                        </div>
-                        <span class="name">Chadengle</span>
-                        <i class="fa fa-circle online"></i>
-                    </a>
-                    <span class="clearfix"></span>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <div class="avatar">
-                            <img src="assets/images/users/avatar-2.jpg" alt="">
-                        </div>
-                        <span class="name">Tomaslau</span>
-                        <i class="fa fa-circle online"></i>
-                    </a>
-                    <span class="clearfix"></span>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <div class="avatar">
-                            <img src="assets/images/users/avatar-3.jpg" alt="">
-                        </div>
-                        <span class="name">Stillnotdavid</span>
-                        <i class="fa fa-circle online"></i>
-                    </a>
-                    <span class="clearfix"></span>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <div class="avatar">
-                            <img src="assets/images/users/avatar-4.jpg" alt="">
-                        </div>
-                        <span class="name">Kurafire</span>
-                        <i class="fa fa-circle online"></i>
-                    </a>
-                    <span class="clearfix"></span>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <div class="avatar">
-                            <img src="assets/images/users/avatar-5.jpg" alt="">
-                        </div>
-                        <span class="name">Shahedk</span>
-                        <i class="fa fa-circle away"></i>
-                    </a>
-                    <span class="clearfix"></span>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <div class="avatar">
-                            <img src="assets/images/users/avatar-6.jpg" alt="">
-                        </div>
-                        <span class="name">Adhamdannaway</span>
-                        <i class="fa fa-circle away"></i>
-                    </a>
-                    <span class="clearfix"></span>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <div class="avatar">
-                            <img src="assets/images/users/avatar-7.jpg" alt="">
-                        </div>
-                        <span class="name">Ok</span>
-                        <i class="fa fa-circle away"></i>
-                    </a>
-                    <span class="clearfix"></span>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <div class="avatar">
-                            <img src="assets/images/users/avatar-8.jpg" alt="">
-                        </div>
-                        <span class="name">Arashasghari</span>
-                        <i class="fa fa-circle offline"></i>
-                    </a>
-                    <span class="clearfix"></span>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <div class="avatar">
-                            <img src="assets/images/users/avatar-9.jpg" alt="">
-                        </div>
-                        <span class="name">Joshaustin</span>
-                        <i class="fa fa-circle offline"></i>
-                    </a>
-                    <span class="clearfix"></span>
-                </li>
-                <li class="list-group-item">
-                    <a href="#">
-                        <div class="avatar">
-                            <img src="assets/images/users/avatar-10.jpg" alt="">
-                        </div>
-                        <span class="name">Sortino</span>
-                        <i class="fa fa-circle offline"></i>
-                    </a>
-                    <span class="clearfix"></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-
 </div>
-<div class="modal fade" role="dialog" aria-labelledby="myModalLabel" id="reject-modal" tabindex="-1">
-    <div class="modal-dialog modal-content" role="document"></div>
-</div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <script>
     var resizefunc = [];
 </script>
 
-<!-- jQuery  -->
-<script th:src="@{/static/js/jquery.min.js}"></script>
+
+<script th:src="@{/static/js/jquery-3.4.1.min.js}"></script>
 <script th:src="@{/static/js/jquery.app.js}"></script>
 <script th:src="@{/static/js/bootstrap.min.js}"></script>
 <script th:src="@{/static/plugins/bootstrap-sweetalert/sweet-alert.min.js}"></script>
